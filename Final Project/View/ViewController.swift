@@ -4,7 +4,7 @@
 //
 //  Created by Денис Сторожик on 29.04.2022.
 //
-
+                                    
 import UIKit
 import CoreLocation
 //CoreLocation
@@ -28,17 +28,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupLocation()
+
         mainWeatherTable.delegate = self
         mainWeatherTable.dataSource = self
     }
     
-    // LOCATION
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupLocation()
+    }
+    
+    //LOCATION
+    // Get location
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if !locations.isEmpty, currentCoordinates == nil {
             currentCoordinates = locations.first
             locationManager.stopUpdatingLocation()
+            locationRequest()
         }
+    }
+    
+    func locationRequest() {
+        guard let currentCoordinates = currentCoordinates else {
+            return
+        }
+        let long = currentCoordinates.coordinate.longitude
+        let lat = currentCoordinates.coordinate.latitude
+        print ("\(long) | \(lat)")
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -51,6 +67,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+
     }
     
     
