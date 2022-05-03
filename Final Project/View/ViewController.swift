@@ -23,8 +23,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet var mainWeatherTable: UITableView!
 
     var models = [Weather]()
-    var locationManager = CLLocationManager()
-    
+//    var locationManager = CLLocationManager()
+    var weatherService = WeatherService()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,41 +35,41 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        setupLocation()
+        weatherService.loadWeatherData()
     }
     
     //LOCATION
     // Get location
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if !locations.isEmpty, currentCoordinates == nil {
-            currentCoordinates = locations.first
-            locationManager.stopUpdatingLocation()
-            locationRequest()
-        }
-    }
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        if !locations.isEmpty, currentCoordinates == nil {
+//            currentCoordinates = locations.first
+//            locationManager.stopUpdatingLocation()
+//            locationRequest()
+//        }
+//    }
     
-    func locationRequest() {
-        guard let currentCoordinates = currentCoordinates else {
-            return
-        }
-        let long = currentCoordinates.coordinate.longitude
-        let lat = currentCoordinates.coordinate.latitude
-        print ("\(long) | \(lat)")
-    }
+//    func locationRequest() {
+//        guard let currentCoordinates = currentCoordinates else {
+//            return
+//        }
+//        let long = currentCoordinates.coordinate.longitude
+//        let lat = currentCoordinates.coordinate.latitude
+//        print ("\(long) | \(lat)")
+//    }
+//
+//    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+//    return
+//    }
     
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-    return
-    }
-    
-    //Location Settings
-    func setupLocation() {
-        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-
-    }
-    
+//    //Location Settings
+//    func setupLocation() {
+//        locationManager.desiredAccuracy = kCLLocationAccuracyKilometer
+//        locationManager.delegate = self
+//        locationManager.requestWhenInUseAuthorization()
+//        locationManager.startUpdatingLocation()
+//
+//    }
+//
     
     //TABLE
     
@@ -83,7 +83,4 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 }
 
-struct Weather {
-    
-}
 
