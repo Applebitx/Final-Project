@@ -1,3 +1,9 @@
+
+
+
+
+import Foundation
+
 struct WeatherModel: Codable {
     let timezone: String
     let current: Current

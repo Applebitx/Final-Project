@@ -17,26 +17,65 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5YH-jb-byp">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="451" width="414" height="411"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQO-7A-JeS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="429"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CityName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAt-nd-dd2">
+                                        <rect key="frame" x="145" y="78" width="125" height="51"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqs-Yq-VeT">
+                                        <rect key="frame" x="122" y="137" width="170" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Temp Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUY-S6-7HF">
+                                        <rect key="frame" x="164" y="166" width="87" height="83"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PaL-30-uYX">
+                                        <rect key="frame" x="127" y="279" width="160" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.29803921568627451" green="0.63137254901960782" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.29803921568627451" green="0.63137254901960782" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="5YH-jb-byp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BmR-qS-mle"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5YH-jb-byp" secondAttribute="bottom" id="Y0v-WT-sHF"/>
-                            <constraint firstItem="5YH-jb-byp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gEQ-Iq-BBQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5YH-jb-byp" secondAttribute="trailing" id="lkz-di-W9e"/>
+                            <constraint firstItem="pQO-7A-JeS" firstAttribute="leading" secondItem="5YH-jb-byp" secondAttribute="leading" id="0lk-LX-p6H"/>
+                            <constraint firstItem="pQO-7A-JeS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="4bC-dn-IaW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pQO-7A-JeS" secondAttribute="trailing" id="D6i-YW-TjO"/>
+                            <constraint firstAttribute="bottom" secondItem="pQO-7A-JeS" secondAttribute="bottom" constant="467" id="I5Z-Yb-bUx"/>
+                            <constraint firstItem="5YH-jb-byp" firstAttribute="top" secondItem="pQO-7A-JeS" secondAttribute="bottom" constant="22" id="NZN-Br-ZWW"/>
+                            <constraint firstItem="pQO-7A-JeS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="PTr-nu-63S"/>
+                            <constraint firstItem="5YH-jb-byp" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Tt2-VG-8w1"/>
+                            <constraint firstItem="5YH-jb-byp" firstAttribute="trailing" secondItem="pQO-7A-JeS" secondAttribute="trailing" id="nPr-Te-c9e"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cityName" destination="wAt-nd-dd2" id="ANB-1e-KNv"/>
+                        <outlet property="currentTempLabel" destination="dUY-S6-7HF" id="RS0-wK-CjO"/>
+                        <outlet property="descriptionLabel" destination="gqs-Yq-VeT" id="hhX-Vg-MOI"/>
                         <outlet property="mainWeatherTable" destination="5YH-jb-byp" id="fk3-nv-kXd"/>
+                        <outlet property="weatherImage" destination="PaL-30-uYX" id="cjn-xH-MXq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="116"/>
+            <point key="canvasLocation" x="131.8840579710145" y="115.84821428571428"/>
         </scene>
     </scenes>
     <resources>
